@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    var timeline = new Timeline();
+    var wrapper = new Wrapper(new Timeline(), new Events());
     $('body').html(
-        timeline.html()
+        wrapper.html()
     );
+    wrapper.activate();
 });

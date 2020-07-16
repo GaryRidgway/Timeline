@@ -1,0 +1,30 @@
+#events {
+    // scroll-snap-type: x mandatory;
+    // scroll-padding: 50%;
+    overflow-x: auto;
+    // overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    padding: 21px 0px;
+
+    .event {
+        // scroll-snap-align: center;
+        width: 6px;
+        height: 42px;
+        margin: 0px 40px;
+        background-color: #fff;
+        flex: 0 0 auto;
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.6), 0 10px 10px rgba(0,0,0,0.6);
+        cursor: pointer;
+
+        &.focused {
+            transform: scale(3,2);;
+        }
+
+        &.pikd {
+            background-color: red;
+        }
+    }
+}
