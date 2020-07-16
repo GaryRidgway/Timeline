@@ -22,9 +22,14 @@
         &.focused {
             transform: scale(3,2);;
         }
+    }
 
-        &.pikd {
-            background-color: red;
+    &.sticky-scroll {
+        scroll-snap-type: x mandatory;
+        scroll-padding: 50%;
+
+        .event {
+            scroll-snap-align: center;
         }
     }
 }

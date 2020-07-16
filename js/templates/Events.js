@@ -2,7 +2,7 @@
 function Events() {
     this.args = arguments;
     this.template = '\
-        <div id="events">\
+        <div id="events" class="sticky-scroll">\
             <div class="event"></div>\
             <div class="event"></div>\
             <div class="event"></div>\
@@ -327,6 +327,8 @@ function Events() {
 
         // Do any code for this template.
         $('#events').scroll(function(){
+            let events = $(this);
+            events.removeClass('sticky-scroll');
             clearTimeout($.data(this, 'scrollTimer'));
             $.data(this, 'scrollTimer', setTimeout(function() {
                 $('.event').removeClass('focused');
@@ -335,6 +337,7 @@ function Events() {
                 if(jElem.hasClass('event')) {
                     jElem.addClass('focused');
                 }
+                events.addClass('sticky-scroll');
             }, 250));
         });
 
@@ -358,7 +361,6 @@ function Events() {
                     jElem.addClass('focused');
                 }
             }, 501)
-            $(this).addClass('pikd');
         });
     }
 }

@@ -74,7 +74,13 @@ body {
           transform: scale(3, 2);
 }
 
-#events .event.pikd {
-  background-color: red;
+#events.sticky-scroll {
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  scroll-padding: 50%;
+}
+
+#events.sticky-scroll .event {
+  scroll-snap-align: center;
 }
 /*# sourceMappingURL=timeline_styles.css.map */
