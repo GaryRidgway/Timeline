@@ -35,5 +35,10 @@ function Wrapper() {
 
         // Do any code for this template.
         $('#timeline-wrapper').addClass('ready');
+
+        $(window).resize(function() {
+            event_padding_resize();
+        });
+        event_padding_resize();
     }
 }

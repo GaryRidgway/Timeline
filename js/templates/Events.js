@@ -3,300 +3,43 @@ function Events() {
     this.args = arguments;
     this.template = '\
         <div id="events" class="sticky-scroll">\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
-            <div class="event"></div>\
+            <div class="headboard"></div>\
+            <div class="event">\
+                <div class="event-fret"></div>\
+                <div class="event-topbox">\
+                    <h2 class="event-title">Old Lephuakesh is destroyed</h2>\
+                    <h3 class="event-year">Akaday the 10th of Ches in 3010</h2>\
+                </div>\
+            </div>\
+            <div class="event">\
+                <div class="event-fret"></div>\
+                <div class="event-topbox">\
+                    <h2 class="event-title">Tehlmar becomes the Red Revenant</h2>\
+                    <h3 class="event-year">Janday the 3rd of Marpenoth in 3050</h2>\
+                </div>\
+            </div>\
+            <div class="event">\
+                <div class="event-fret"></div>\
+                <div class="event-topbox">\
+                    <h2 class="event-title">Aurelius is taken from Yhoria</h2>\
+                    <h3 class="event-year">Akaday the 20th of Mirtul in 3046</h2>\
+                </div>\
+            </div>\
+            <div class="event">\
+                <div class="event-fret"></div>\
+                <div class="event-topbox">\
+                    <h2 class="event-title">Your Mom</h2>\
+                    <h3 class="event-year">3052</h2>\
+                </div>\
+            </div>\
+            <div class="event">\
+                <div class="event-fret"></div>\
+                <div class="event-topbox">\
+                    <h2 class="event-title">Kurath Mal Hidalga is eternally bound</h2>\
+                    <h3 class="event-year">Seleday the 11th of Ches in 3052</h2>\
+                </div>\
+            </div>\
+            <div class="footboard"></div>\
         </div>\
     ';
     this.ptag = 'EVENTS';
@@ -330,37 +73,23 @@ function Events() {
             let events = $(this);
             events.removeClass('sticky-scroll');
             clearTimeout($.data(this, 'scrollTimer'));
+            $('.focused').removeClass('focused');
+            focus_event();
             $.data(this, 'scrollTimer', setTimeout(function() {
-                $('.event').removeClass('focused');
-                let elem = document.elementFromPoint(window.innerWidth/2, Math.ceil($('#events').position().top + $('#events').outerHeight()/2));
-                let jElem = $(elem);
-                if(jElem.hasClass('event')) {
-                    jElem.addClass('focused');
-                }
                 events.addClass('sticky-scroll');
             }, 250));
         });
-
-        // Add focus on center point.
-        let elem = document.elementFromPoint(window.innerWidth/2, Math.ceil($('#events').position().top))
-        let jElem = $(elem);
-        if(jElem.hasClass('event')) {
-            jElem.addClass('focused');
-        }
 
         $('#events .event').click(function() {
             let thisbar = $(this);
             $('#events').animate({
                 scrollLeft: ($('#events').scrollLeft() + (thisbar.position().left - $(document).outerWidth()/2) + thisbar.outerWidth(true)/2)
-            },500);
-            setTimeout(function() {
-                $('.event').removeClass('focused');
-                let elem = document.elementFromPoint(window.innerWidth/2, Math.ceil($('#events').position().top + $('#events').outerHeight()/2));
-                let jElem = $(elem);
-                if(jElem.hasClass('event')) {
-                    jElem.addClass('focused');
-                }
-            }, 501)
+            },250);
+            $('.focused').removeClass('focused');
+            focus_event();
         });
+
+        // Add focus on center point.
+        focus_event();
     }
 }
