@@ -4,41 +4,7 @@ function Events() {
     this.template = '\
         <div id="events" class="sticky-scroll">\
             <div class="headboard"></div>\
-            <div class="event">\
-                <div class="event-fret"></div>\
-                <div class="event-topbox">\
-                    <h2 class="event-title">Old Lephuakesh is destroyed</h2>\
-                    <h3 class="event-year">Akaday the 10th of Ches in 3010</h2>\
-                </div>\
-            </div>\
-            <div class="event">\
-                <div class="event-fret"></div>\
-                <div class="event-topbox">\
-                    <h2 class="event-title">Tehlmar becomes the Red Revenant</h2>\
-                    <h3 class="event-year">Janday the 3rd of Marpenoth in 3050</h2>\
-                </div>\
-            </div>\
-            <div class="event">\
-                <div class="event-fret"></div>\
-                <div class="event-topbox">\
-                    <h2 class="event-title">Aurelius is taken from Yhoria</h2>\
-                    <h3 class="event-year">Akaday the 20th of Mirtul in 3046</h2>\
-                </div>\
-            </div>\
-            <div class="event">\
-                <div class="event-fret"></div>\
-                <div class="event-topbox">\
-                    <h2 class="event-title">Your Mom</h2>\
-                    <h3 class="event-year">3052</h2>\
-                </div>\
-            </div>\
-            <div class="event">\
-                <div class="event-fret"></div>\
-                <div class="event-topbox">\
-                    <h2 class="event-title">Kurath Mal Hidalga is eternally bound</h2>\
-                    <h3 class="event-year">Seleday the 11th of Ches in 3052</h2>\
-                </div>\
-            </div>\
+                {{EVENTS_CONTAINER}}\
             <div class="footboard"></div>\
         </div>\
     ';
@@ -54,6 +20,23 @@ function Events() {
             }
         }
     }
+
+    const params = new URLSearchParams(window.location.search);
+    let events_html ='';
+    if (params.has('timeline_data')) {
+        let timeline_data = events_data[params.get('timeline_data')];
+        console.log(timeline_data);
+
+        timeline_data.forEach(function(element) {
+            console.log('ge');
+            let event = new Event(element.title, element.year, element.description);
+            events_html = events_html + event.html();
+        });
+    }
+
+    console.log(events_html);
+
+    this.template = replace_pattern_in_string(this.template, '{{EVENTS_CONTAINER}}', events_html);
 
     this.html = function() {
         return(this.template);
