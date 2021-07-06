@@ -1,7 +1,7 @@
 // Accepts any number of templates.
-function Event(title, year, description) {
+function Event(title, year, description, eventNO) {
     this.template = '\
-        <div class="event">\
+        <div id="event-' + eventNO +'"class="event">\
             <div class="event-fret"></div>\
             <div class="event-topbox">\
                 <h2 class="event-title">' + title + '</h2>\

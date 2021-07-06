@@ -1,8 +1,20 @@
 body {
   margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #timeline-wrapper {
+  font-family: 'Cinzel', serif;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: -webkit-gradient(linear, right top, left top, from(#333), color-stop(45%, #245), color-stop(55%, #245), to(#333));
+  background: linear-gradient(to left, #333 0%, #245 45%, #245 55%, #333 100%);
+}
+
+#timeline-wrapper.line-plot {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,13 +28,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#333), color-stop(45%, #245), color-stop(55%, #245), to(#333));
-  background: linear-gradient(to bottom, #333 0%, #245 45%, #245 55%, #333 100%);
 }
 
-#timeline {
+.line-plot #timeline {
   position: absolute;
   height: 6px;
   width: 100%;
@@ -37,12 +45,50 @@ body {
   transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 
-.ready #timeline {
+.ready .line-plot #timeline {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
-#events {
+.vertical-listing #timeline {
+  width: 4px;
+  height: 100vh;
+  position: absolute;
+  left: calc(50% - 2px);
+  background-color: #fff;
+}
+
+#timeline-menu {
+  -ms-flex-preferred-size: 44%;
+      flex-basis: 44%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#timeline-menu a {
+  padding: 5px 10px;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 1px solid #dcdcdc;
+  color: #333;
+  text-decoration: none;
+}
+
+#timeline-menu a:last-child {
+  border-bottom: none;
+}
+
+#timeline-menu a.menu-item-active {
+  background-color: #22445552;
+}
+
+.line-plot #events {
   overflow-x: hidden;
   position: absolute;
   width: 100%;
@@ -52,14 +98,14 @@ body {
   padding: 21px 0px;
 }
 
-#events .headboard, #events .footboard {
+.line-plot #events .headboard, .line-plot #events .footboard {
   width: calc(50% - 43px);
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
 }
 
-#events .event {
+.line-plot #events .event {
   position: relative;
   width: 6px;
   height: 42px;
@@ -70,7 +116,7 @@ body {
   cursor: pointer;
 }
 
-#events .event .event-fret {
+.line-plot #events .event .event-fret {
   height: 100%;
   background-color: #fff;
   -webkit-transform: scale(1);
@@ -85,7 +131,7 @@ body {
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.6);
 }
 
-#events .event .event-topbox {
+.line-plot #events .event .event-topbox {
   position: absolute;
   width: 90vw;
   left: -45vw;
@@ -108,7 +154,7 @@ body {
           align-items: center;
 }
 
-#events .event .event-topbox .event-title {
+.line-plot #events .event .event-topbox .event-title {
   font-family: 'Cinzel', serif;
   margin: 0;
   color: #fff;
@@ -119,7 +165,7 @@ body {
   text-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.6);
 }
 
-#events .event .event-topbox .event-year {
+.line-plot #events .event .event-topbox .event-year {
   font-family: 'Cinzel', serif;
   margin: 0;
   color: #fff;
@@ -130,7 +176,7 @@ body {
   margin-right: -17px;
 }
 
-#events .event .event-topbox p {
+.line-plot #events .event .event-topbox p {
   position: absolute;
   top: calc(100% + 175px);
   font-family: 'Cinzel', serif;
@@ -143,22 +189,116 @@ body {
   text-shadow: 0 14px 28px rgba(0, 0, 0, 0.6), 0 10px 10px rgba(0, 0, 0, 0.6);
 }
 
-#events .event.focused .event-fret {
+.line-plot #events .event.focused .event-fret {
   -webkit-transform: scale(1, 3.2) translate(0px, 6px);
           transform: scale(1, 3.2) translate(0px, 6px);
 }
 
-#events .event.focused .event-topbox {
+.line-plot #events .event.focused .event-topbox {
   opacity: 1;
 }
 
-#events.sticky-scroll {
+.line-plot #events.sticky-scroll {
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   scroll-padding: 50%;
 }
 
-#events.sticky-scroll .event {
+.line-plot #events.sticky-scroll .event {
   scroll-snap-align: center;
+}
+
+.vertical-listing #events {
+  height: 100%;
+  overflow: auto;
+}
+
+.vertical-listing #events .headboard,
+.vertical-listing #events .footboard {
+  margin-bottom: 45px;
+}
+
+.vertical-listing #events .event {
+  width: 40%;
+  color: #fafafa;
+  -webkit-filter: drop-shadow(0px 0px 2px black);
+          filter: drop-shadow(0px 0px 2px black);
+  position: relative;
+  border-radius: 3px;
+}
+
+.vertical-listing #events .event:nth-child(odd) {
+  left: calc(100% - 40% - calc(calc(100% - 40% - 40%) / 4));
+}
+
+.vertical-listing #events .event:nth-child(odd) .event-title:before {
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: calc(-12.5% - 2px);
+  bottom: -7px;
+  border: 3px solid #fafafa;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(0px 0px 2px black);
+          filter: drop-shadow(0px 0px 2px black);
+}
+
+.vertical-listing #events .event:nth-child(odd) .event-title:after {
+  left: calc(-12.5% + 12px);
+}
+
+.vertical-listing #events .event:nth-child(even) {
+  left: calc(calc(100% - 40% - 40%) / 4);
+}
+
+.vertical-listing #events .event .event-title {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 5px 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.vertical-listing #events .event .event-title:before {
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: calc(112.5% - 2px);
+  bottom: -7px;
+  z-index: 1;
+  border: 3px solid #fafafa;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(0px 0px 2px black);
+          filter: drop-shadow(0px 0px 2px black);
+}
+
+.vertical-listing #events .event .event-title:after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: calc(112.5% - 12px);
+  left: 10px;
+  bottom: 0;
+  background-color: #fafafa;
+}
+
+.vertical-listing #events .event .event-year {
+  margin: 0;
+}
+
+.vertical-listing #events .event .event-year:not(:empty) {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.vertical-listing #events .event p {
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 5px 10px;
 }
 /*# sourceMappingURL=timeline_styles.css.map */

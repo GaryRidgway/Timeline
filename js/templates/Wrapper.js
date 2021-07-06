@@ -2,7 +2,8 @@
 function Wrapper() {
     this.args = arguments;
     this.template = '\
-        <div id="timeline-wrapper">\
+        <div id="timeline-menu">{{TIMELINE_MENU}}</div>\
+        <div id="timeline-wrapper" class="vertical-listing">\
             {{TIMELINE}}\
             {{EVENTS}}\
         </div>\

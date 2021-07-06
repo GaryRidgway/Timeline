@@ -23,18 +23,18 @@ function Events() {
 
     const params = new URLSearchParams(window.location.search);
     let events_html ='';
+    let events_menu_html = '';
     if (params.has('timeline_data')) {
         let timeline_data = events_data[params.get('timeline_data')];
-        console.log(timeline_data);
 
-        timeline_data.forEach(function(element) {
-            console.log('ge');
-            let event = new Event(element.title, element.year, element.description);
+        timeline_data.forEach(function(element, index) {
+            let event = new Event(element.title, element.year, element.description, index);
             events_html = events_html + event.html();
+            events_menu_html = events_menu_html + '\
+                <a class="timeline-menu-link" href="#event-' + index + '">' + element.title + '</a>\
+            ';
         });
     }
-
-    console.log(events_html);
 
     this.template = replace_pattern_in_string(this.template, '{{EVENTS_CONTAINER}}', events_html);
 
@@ -73,6 +73,16 @@ function Events() {
         });
 
         // Add focus on center point.
-        focus_event();
+        // focus_event();
+
+        document.getElementById('timeline-menu').innerHTML = replace_pattern_in_string(document.getElementById('timeline-menu').innerHTML, '{{TIMELINE_MENU}}', events_menu_html);
+        document.querySelectorAll('.timeline-menu-link').forEach(function(link){link.addEventListener('click', function(element) {
+            let menu_items = document.querySelectorAll(".menu-item-active");
+
+            menu_items.forEach(function (element, index) {
+                element.classList.remove("menu-item-active");
+            });
+            element.target.classList.add('menu-item-active');
+        })});
     }
 }
